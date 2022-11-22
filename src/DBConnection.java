@@ -4,7 +4,7 @@ import java.sql.SQLException;
 
 public class DBConnection {
 	   
-	    //Tp2firstcommit
+	    private static DBConnection instance;
 		String BDD = "nomBD";
 		String url = "jdbc:mysql://localhost:3306/" + BDD;
 		String user = "root";
@@ -16,6 +16,9 @@ public class DBConnection {
 			conn=DriverManager.getConnection(url, user,passwd);
 		}
 
+	    public static DBConnection getInstance() {
+	    	return instance;
+	    }
 	    
 	    public Connection getConn() {
 			return conn;
