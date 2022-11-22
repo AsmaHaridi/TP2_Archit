@@ -4,6 +4,7 @@ import java.sql.SQLException;
 
 public class DBConnection {
 	   
+	    //Tp2firstcommit
 		String BDD = "nomBD";
 		String url = "jdbc:mysql://localhost:3306/" + BDD;
 		String user = "root";
