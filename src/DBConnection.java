@@ -16,7 +16,9 @@ public class DBConnection {
 			conn=DriverManager.getConnection(url, user,passwd);
 		}
 
-	    public static DBConnection getInstance() {
+	    public static DBConnection getInstance()throws SQLException {
+	    	if (instance == null) instance = new DBConnection ();
+	    	else if (instance.getConn().isClosed()) instance = new DBConnection();
 	    	return instance;
 	    }
 	    
