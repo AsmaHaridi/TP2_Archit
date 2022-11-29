@@ -1,18 +1,31 @@
 import java.sql.Connection;
+
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+
 public class EtudiantService {
 	
+	IEtudiantRepository IEtudiantRep;
+	IUniversityRepository IUniversityRep;
 	
-	public boolean inscription (int matricule, String nom, String prénom, String email,String pwd, int id_universite) throws SQLException	
+	public EtudiantService (IEtudiantRepository IEtudiantRep , IUniversityRepository IuniversityRep) {
+		
+		IEtudiantRep=IEtudRep;
+		IUniversityRep=IUnivRep;
+	}
+	
+	public boolean inscription (int matricule, String nom, String prenom, String email,String pwd, int id_university) throws SQLException	
 	{
-		EtudiantRepository StudRep= new EtudiantRepository();
+		
+		/*EtudiantRepository StudRep= new EtudiantRepository();
 	    UniversiteRepository UnivRep= new UniversiteRepository();
 	    Etudiant stud = new Etudiant(matricule, nom, prénom, email,pwd,id_universite);
-	    Universite univ=UnivRep.GetById(id_universite);
+	    Universite univ=UnivRep.GetById(id_universite);*/
 	    
+		Etudiant etud = etud.creer(matricule,nom,prenom,email,pwd,id_university);
+		
 	    System.out.println("Log: début de l'opération d'ajout de l'étudiant avec matricule "+matricule);
 	    
 	    if(email == null || email.length() == 0)
