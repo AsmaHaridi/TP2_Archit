@@ -9,11 +9,13 @@ public class EtudiantService {
 	
 	IEtudiantRepository IEtudiantRep;
 	IUniversityRepository IUniversityRep;
+	IJournal journal;
 	
-	public EtudiantService (IEtudiantRepository IEtudiantRep , IUniversityRepository IuniversityRep) {
+	public EtudiantService (IEtudiantRepository IEtudiantRep , IUniversityRepository IuniversityRep,IJournal IJournal) {
 		
 		IEtudiantRep=IEtudRep;
 		IUniversityRep=IUnivRep;
+		this.journal=journal;
 	}
 	
 	public boolean inscription (int matricule, String nom, String prenom, String email,String pwd, int id_university) throws SQLException	
@@ -25,24 +27,29 @@ public class EtudiantService {
 	    Universite univ=UnivRep.GetById(id_universite);*/
 	    
 		Etudiant etud = etud.creer(matricule,nom,prenom,email,pwd,id_university);
+		journal.log("Log: début de l'opération d'ajout de l'étudiant avec matricule "+matricule");
+	    //System.out.println("Log: début de l'opération d'ajout de l'étudiant avec matricule "+matricule);
+	    if(IEtudiantRep.ExistEmail(email)|| iEtudiantRep.ExistMatricule(matricule)) {
+	    	journal.log("Log:Echec de l'operation");
+	    	return false;
+	    }
 		
-	    System.out.println("Log: début de l'opération d'ajout de l'étudiant avec matricule "+matricule);
-	    
 	    if(email == null || email.length() == 0)
 	    {
 	    	return false;
 	    }
 	    
-	    if (StudRep.Exists(matricule))
+	    if (IEtudRep.Exists(matricule))
 	    {
 	        return false;
 	    }
 	    
-		if (StudRep.Exists(email))
+		if (IEtudRep.Exists(email))
 	    {
 	        return false;
 	    }
 		
+	
 		
 		
 		 if (univ.getPack() == TypePackage.Standard)
@@ -52,10 +59,10 @@ public class EtudiantService {
 	     else if (univ.getPack() == TypePackage.Premium)
 	     {
 	    	 stud.setNbLivreMensuel_Autorise(10*2);
-	     }                           
+	     }                      
 	     
-		 StudRep.add(stud);
-		 System.out.println("Log: Fin de l'opération d'ajout de l'étudiant avec matricule "+matricule);
+		 IEtudiantRep.add(etud);
+	      journal.log("Log: Fin de l'opération d'ajout de l'étudiant avec matricule "+matricule");
 		 return true;
 	    
 		
