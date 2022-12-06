@@ -1,4 +1,14 @@
+package View;
 import java.sql.SQLException;
+
+import Journal.AfficherMessage;
+import Journal.Ecran;
+import Journal.EnrichirMessage;
+import Journal.Fichier;
+import Journal.IJournal;
+import Repository.EtudiantRepository;
+import Repository.UniversiteRepository;
+import Services.EtudiantService;
 
 public class MainApp {
 

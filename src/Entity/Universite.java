@@ -1,4 +1,4 @@
-
+package Entity;
 public class Universite {
 
  private int i_univ; //identifiant unique de l'université

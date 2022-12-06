@@ -1,4 +1,4 @@
-
+package Entity;
 public class IllimiteEtudiant extends Etudiant {
  
 	public IllimiteEtudiant(int matricule, String nom, String prenom, String email, String pwd, int id_universite) {

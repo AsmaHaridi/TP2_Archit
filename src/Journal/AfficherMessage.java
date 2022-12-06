@@ -1,4 +1,4 @@
-
+package Journal;
 public class AfficherMessage implements IJournal {
 
 	IJournal journal1;

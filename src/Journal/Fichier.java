@@ -1,3 +1,4 @@
+package Journal;
 import java.io.IOException;
 public class Fichier implements IJournal {
 

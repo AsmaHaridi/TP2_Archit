@@ -1,9 +1,14 @@
+package Services;
 import java.sql.Connection;
 
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+
+import Journal.IJournal;
+import Repository.IEtudiantRepository;
+import Repository.IUniversityRepository;
 
 public class EtudiantService {
 	

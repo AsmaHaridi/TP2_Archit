@@ -1,4 +1,7 @@
+package Repository;
 import java.util.ArrayList;
+
+import Entity.Etudiant;
 public interface IEtudiantRepository {
 
 	void add(Etudiant E);

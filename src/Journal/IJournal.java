@@ -1,3 +1,4 @@
+package Journal;
 
 public interface IJournal {
 
