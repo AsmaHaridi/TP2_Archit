@@ -1,12 +1,13 @@
 
-public class Etudiant {
-
+public abstract class Etudiant {
+       
+    	   
 		private int matricule;
 	    private String nom;
 	    private String prenom;
 	    private String email ;
 	    private String pwd;
-	    private int nbLivreMensuel_Autorise;
+	    protected int nbLivreMensuel_Autorise;
 	    private int nbLivreEmprunte;
 	    private int id_universite;
 	    
@@ -101,9 +102,10 @@ public class Etudiant {
 			this.pwd = pwd;
 		}
 
-		public void AjouterBounus (TypePackage p) {
+		/*public void AjouterBounus (TypePackage p) {
 			if (p == TypePackage.Standard) {nbLivreMensuel_Autorise +=5;}
-			else if (p == TypePackage.Premium) {nbLivreMensuel_Autorise +=10;}
-		}
+			else if (p == TypePackage.Premium) {nbLivreMensuel_Autorise +=10 ;}
+		}*/
 		
 	    }
+       
