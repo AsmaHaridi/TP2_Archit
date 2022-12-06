@@ -84,6 +84,11 @@ public ArrayList<Etudiant> GetEtudiatparLivreEmprunte()
 	
 }
 
-
+public void AjouterBonusEtudiants() {
+	ArrayList<EtudiantsLimiteStandardPremium> etudiantlimite=IEtudRep.getAllEtudiant_Forfait_Limite();
+	for(EtudiantLimiteStandardPremium etudiant:etudiantlimite) {
+		etudiant.AjouterBonus();
+	}
+}
 	
 }

@@ -101,6 +101,9 @@ public class Etudiant {
 			this.pwd = pwd;
 		}
 
-		
+		public void AjouterBounus (TypePackage p) {
+			if (p == TypePackage.Standard) {nbLivreMensuel_Autorise +=5;}
+			else if (p == TypePackage.Premium) {nbLivreMensuel_Autorise +=10;}
+		}
 		
 	    }
